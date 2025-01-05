@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Мага Бир Билдирүү</h1>
+        <label for="messageInput">Билдирүүңүздү жазып коюңуз:</label>
+        <input type="text" id="messageInput" placeholder="Билдирүүнү киргизиңиз...">
+        <button onclick="sendMessage()">Жиберүү</button>
+    
+        <div id="message" class="message" style="display: none;">
+          <strong>Сиздин билдирүү:</strong> <span id="displayMessage"></span>
+        </div>
+      </div>
+    
+      <script>
+        function sendMessage() {
+          var messageInput = document.getElementById('messageInput').value;
+          var displayMessage = document.getElementById('displayMessage');
+          var messageDiv = document.getElementById('message');
+    
+          if (messageInput.trim() !== "") {
+            displayMessage.textContent = messageInput;
+            messageDiv.style.display = 'block';
+          } else {
+            alert("Билдирүү киргизиңиз.");
+          }
+        }
+      </script>
+</body>
+</html>
